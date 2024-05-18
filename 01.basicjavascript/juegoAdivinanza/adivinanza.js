@@ -1,0 +1,12 @@
+//1.Solicitar al gamer un numero entre 1-10.
+//2.Guardar lo que el gamer puso en una variable.
+//3.Anotar el numero ganador con una  varibale.
+//4.Mirar si el numero que dijo el gamer es correcto.
+//5.Mostrarle al gamer si el numero es correcto.
+//6.solo me debe acerptar un numero entre uno y diez si no es un nuemro entre  1 o 10 mostrara el mesaje de error.
+//7.Si la conparacion es igual a falso mostrara el mensaje perdiste(game over),si no el mensaje de ganaste(win).
+//8.meter mas jugadores hasta que encuentren el numero.  
+let numeroSolicitado = parseInt(prompt("Hola,escoge un numero entre 1y10"));
+let numberWin = Math.floor(Math.random()*10)+1;
+let comparation = numeroSolicitado === numberWin;
+alert(`Este es el numero ganador ${numberWin} y este es el tuyo:${numeroSolicitado} y esta la comparacion:${comparation}`);
