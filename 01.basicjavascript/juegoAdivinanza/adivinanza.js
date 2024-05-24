@@ -10,3 +10,7 @@ let numeroSolicitado = parseInt(prompt("Hola,escoge un numero entre 1y10"));
 let numberWin = Math.floor(Math.random()*10)+1;
 let comparation = numeroSolicitado === numberWin;
 alert(`Este es el numero ganador ${numberWin} y este es el tuyo:${numeroSolicitado} y esta la comparacion:${comparation}`);
+//let bodyElement = document.body;
+//console.log(bodyElement);
+//Pues lo que hicimos fue cambiar el html de el body en adivinanza y cogimos el elemento basados en el id y lo modificamos con inner el texto.
+document.getElementById("letrero").innerHTML = `Este es el numero ganador ${numberWin} y este es el tuyo:${numeroSolicitado} y esta la comparacion:${comparation}`
