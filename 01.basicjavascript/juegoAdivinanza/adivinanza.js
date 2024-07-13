@@ -6,8 +6,8 @@
 //6.solo me debe acerptar un numero entre uno y diez si no es un nuemro entre  1 o 10 mostrara el mesaje de error(TAREA).
 //7.Si la conparacion es igual a falso mostrara el mensaje perdiste(game over),si no el mensaje de ganaste(win).
 //8.meter mas jugadores hasta que encuentren el numero.  
-let numeroSolicitado = parseInt(prompt("Hola,escoge un numero entre 1y10"));
-let numberWin = Math.floor(Math.random()*10)+1;
+let numeroSolicitado = parseInt(prompt("Hola,escoge un numero entre 1y3"));
+let numberWin = Math.floor(Math.random()*3)+1;
 let ganaste = numeroSolicitado === numberWin;
 let resultado = "perdiste";
 if(ganaste === true){ 
