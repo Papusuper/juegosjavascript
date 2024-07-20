@@ -1,0 +1,4 @@
+1 que es usuario digite un dia de la semana
+2 si digita  sera lunes, si digita 2 sera martes y haci con todos 
+3 que dijite un numero entre mayor que 1 Y menor que 7 si no digite error+
+  
