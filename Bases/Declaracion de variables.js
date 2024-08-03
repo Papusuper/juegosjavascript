@@ -22,6 +22,8 @@ let fechaCumpleanos = new Date(2008,7,29);
 let birthday = new Date("December 17, 1995 03:24:00");
 let birthday2 = new Date("1995-12-17T03:24:00");
 let fechaAltual = new Date(Date.now());
+let array = [1,2,3,4,5,6,7,8,9,10]
+let array2 = ["hola","como","estas","lucia",array,45]
 console.log("my name is "+name+" age "+age+" is Boy "+isBoy );
 console.log(`my name is ${name} age ${age} is Boy ${isBoy}` );
 console.log(typeof name );
@@ -39,4 +41,7 @@ console.info(fechaCumpleanos);
 console.log(birthday);
 console.log(birthday2);
 console.log(fechaAltual);
-
+console.log(array[2]);
+console.log(array2[4]);
+console.log(name.at(5));
+console.log(name[5]);
