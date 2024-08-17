@@ -3,3 +3,10 @@
 3 que dijite un numero entre mayor que 1 Y menor que 7 si no digite error+
  ==========================================================================
  5 modificar dias de la semna pero con input y button y sin alert o promt. 
+
+ Tarea 
+ Crear una aplicacion que haga lo siguiente.
+ Desde un input de html vamos a capturar una lista de comprar 
+ Un boton que al presionarlo me agregue eso en la lista 
+ Imprima la lista en un elemento html li
+ compropar qu el input no este vacio y si esta vacio mostrar un mensaje de error.
