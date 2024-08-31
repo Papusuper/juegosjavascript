@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de mercado</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <input type="text" id="item" placeholder = "agrega algo a tu lista">
-  <button onclick="agregarListaDeMercado()">agrega algo a tu lista</button>
-  <button></button>
-  <ol id="lista">
-    <li>primer elemento</li>
-    <li>segundo elemento</il>
-    <li>tercer elemento</li> 
-    </ol>
-  <script src="listademercado.js"></script>   
+  <div class="container">
+   <div class="input-group">
+   <input type="text" id="item" placeholder = "agrega algo a tu lista">
+   <button onclick="agregarListaDeMercado()">agrega algo a tu lista</button>
+   <button onclick="quitarElementos()">limpia la lista de mercado</button>
+   </div>
+   <ol id="lista"> </ol>
+  </div>
+  <script src="listademercado.js"></script>
 </body>
 </html>
