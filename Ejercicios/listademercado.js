@@ -9,10 +9,16 @@ let item = document.getElementById("item");
 let lista = document.getElementById("lista");
  // agrega una funcion que agregue un item a la lista del usuario.
 function  agregarListaDeMercado(){
-  // agrega el valor del input a la lista  
-  listaDeMercado.push(item.value);
-  // llamr una funtion de lista de mercado
-  imprimirListaDeMercado();   
+   if (item.value.trim() === ""){
+      alert("tienes que escribir algo para que se agrege");
+   }  
+  // agrega el valor del input a la lista
+   else {
+    listaDeMercado.push(item.value);
+    // llamr una funtion de lista de mercado
+    imprimirListaDeMercado();   
+   } 
+   
 }
 // llama una funcion que imprime la lista de mercado o los objetos de ponga los usuarios 
 function imprimirListaDeMercado(){
@@ -22,7 +28,7 @@ function imprimirListaDeMercado(){
    nuevoElemento.textContent = mercado;
    lista.appendChild(nuevoElemento);
   });
-  // este document muestra la cantidad 
+  // este document muestra la cantidad de elementos que hay 
   document.getElementById("cantidad").innerText = `la cantidad total es :${listaDeMercado.length}`;
 }
 // agegra una funcion que quite todos los elementos que allan en la lista. 
