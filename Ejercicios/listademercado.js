@@ -11,14 +11,12 @@ let lista = document.getElementById("lista");
 function  agregarListaDeMercado(){
    if (item.value.trim() === ""){
       alert("tienes que escribir algo para que se agrege");
+      return;
    }  
   // agrega el valor del input a la lista
-   else {
-    listaDeMercado.push(item.value);
-    // llamr una funtion de lista de mercado
-    imprimirListaDeMercado();   
-   } 
-   
+  listaDeMercado.push(item.value);
+  // llamr una funtion de lista de mercado
+  imprimirListaDeMercado();   
 }
 // llama una funcion que imprime la lista de mercado o los objetos de ponga los usuarios 
 function imprimirListaDeMercado(){
