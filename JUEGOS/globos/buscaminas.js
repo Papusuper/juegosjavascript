@@ -6,7 +6,7 @@ const info = document.getElementById("info");
 const puntos = document.getElementById("puntos");
 const squareNumbers = 16;
 
-let startCells = ["😂","😂","😂","😂"," 😂","😂","😂","😂"];
+let startCells = [""];
 let randomNumbers = new Set(); // es muy parecido al arreglo pero la diferencia es que es solo recibe numeros unicos 
 let contandor = 0;
 

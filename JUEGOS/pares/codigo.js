@@ -1,29 +1,64 @@
+//new Set(); // es muy parecido al arreglo pero la diferencia es que es solo recibe numeros unicos 
 const gameBoard = document.querySelector("#gameboard");
 const play = document.getElementById("play");
-const inicialSound = document.getElementById("inicial");
-const bombSound = document.getElementById("bombsound");
 const info = document.getElementById("info");
-const puntos = document.getElementById("puntos");
 const squareNumbers = 16;
 
-let startCells = ["😂","😂","😂","😂"," 😂","😂","😂","😂"];
-//new Set(); // es muy parecido al arreglo pero la diferencia es que es solo recibe numeros unicos 
-let contandor = 0;
+ 
+let timeoutID;
+let match = 8;
+let tempScore = ""; 
+let startCells = [];
+
+
+function setOutput(){
+    const squares = document.querySelectorAll(".square");
+    if(match === 0){
+      info.textContent = "ganaste muy bien";
+      info.style.color = "green";
+    } else {
+        squares.forEach(square => square.remove()); // recorre todo lo que este en una arreglo es forEach
+        info.textContent = "perdiste, muy mal";
+        info.style.color = "red";
+    } 
+   
+}
+
+function playerTime() {
+    timeoutID = setTimeout(setOutput, 8000);
+}
 
 play.addEventListener("click", () => {
-    inicialSound.play();
     const squares = document.querySelectorAll(".square"); 
+    tempScore = "";
+    info.style.color = "black";
+    clearTimeout(timeoutID);
     if(squares.length) {
         squares.forEach(square => square.remove()); // recorre todo lo que este en una arreglo es forEach
     }
-    createBoard();
-    info.textContent = "";
-    puntos.textContent = "";
-    contandor = 0;
+
+    if(startCells.length === 0){
+        startCells = ["😂","😂","😎","😎","😍","😍","🤗","🤗","🙄","🙄","😴","😴","🏴‍☠️","🏴‍☠️","🍕","🍕"];
+    }
+    match = 8;
+    playerTime();
+     createBoard();
+     createEmogi();
+     info.textContent = "";
 })
 
-
-
+function createEmogi(){
+   for(let i = 0; i < squareNumbers; i++){
+     const randomNumber = Math.floor(Math.random() * startCells.length);
+     const emoji = startCells[randomNumber];
+     let square = document.getElementById(`${i}`);
+     const emojiElement = document.createElement("div");
+     emojiElement.classList.add("emoji");
+     emojiElement.textContent = emoji;
+     square.append(emojiElement);
+     startCells.splice(randomNumber,1); 
+   }
+}
 function createBoard() {   
     startCells.forEach((_cell, index) => {
         const cellElement = document.createElement("div");
@@ -33,25 +68,24 @@ function createBoard() {
         gameBoard.append(cellElement);
     }); 
 }
-
 function addGo(event) {
+     let emoji = event.target;
+     let emojiContent = emoji.textContent;
 
-    const allSqueares = document.querySelectorAll(".square");
-    const goDisplay = document.createElement("div");
-    
-    if(randomNumbers.has(parseInt(event.target.id))) {
-       bombSound.play();
-       goDisplay.classList.add("emoji");
-       goDisplay.textContent = "💣";
-       event.target.append(goDisplay);
-       allSqueares.forEach(square => square.replaceWith(square.cloneNode(true)));
-       info.textContent = "Haz perdido muchacho(a)";
-    } else {
-       goDisplay.classList.add("circle");
-       contandor = contandor + 1;
-       puntos.textContent = `Puntos : ${contandor}`;
-       event.target.append(goDisplay);  
+    if(tempScore !== ""){
+      if(tempScore === emojiContent){
+       emoji.style.backgroundColor = "red";
+       match = match - 1;
+       tempScore = "";
+       info.textContent = `faltan = ${match}`;
+      }
+      else {
+        info.textContent = "te equivocaste";   
+      }
     }
+    else{
+        tempScore = emojiContent;
+        emoji.style.backgroundColor = "red";
+    } 
     
-    event.target.removeEventListener("click", addGo);
 }
